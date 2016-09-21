@@ -1,14 +1,21 @@
 import React from 'react'
 
-export default ({data}) => {
-    return(
+export default (props) => {
+    const {data, id} = props
+    const current_card = data[id];
+    return (
         <div className="profile">
-            <img src={data.avatar}/>
-            <div>
-                <h3>{data.first_name} from {data.country}</h3>
-                <p>{data.description}</p>
+            {current_card  ?
+                <div>
+                    <img src={current_card.avatar}/>
+                    <div>
+                        <h3>{current_card.first_name} from {current_card.country}</h3>
+                        <p>{current_card.description}</p>
 
-            </div>
+                    </div>
+                </div>
+                : null
+            }
         </div>
     )
 }
