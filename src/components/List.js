@@ -7,13 +7,13 @@ export default class List extends Component {
         super(props)        
     }
     render() {
-        const {data, onItemClick} = this.props
+        const {data, onItemPick} = this.props
         return (
             <div className="list">
             {data?
                 <ul>
                     {                        
-                        data.map((item, index)=><li key={index} onMouseUp={onItemClick.bind(null, index)}><Card data={item}/></li>)
+                        data.map((item, index)=><li key={index} onMouseUp={onItemPick.bind(null, item.id)}><Card data={item}/></li>)
                     }
                 </ul>
             :null}

@@ -23,8 +23,8 @@ export default class App extends Component {
 		const names = data.filter((item => (item.first_name.indexOf(name_filter) != -1)));
 		return names;
 	}
-	handleItemClick(i) {
-		this.setState({ profile_index: i })
+	handleProfilePick(profile_id) {
+		this.setState({ profile_index: profile_id })
 	}
 	render() {
 		const {name_filter, profile_index} = this.state;
@@ -43,7 +43,7 @@ export default class App extends Component {
 				</div>
 				<div style={{ display: 'flex' }}>
 					<Profile data = {data} id={profile_index}/>
-					<List data = {cards } onItemClick = {this.handleItemClick.bind(this) }/>
+					<List data = {cards } onItemPick = {this.handleProfilePick.bind(this) }/>
 				</div>
 			</div>
 		);
