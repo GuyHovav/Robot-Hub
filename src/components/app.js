@@ -20,8 +20,8 @@ export default class App extends Component {
 	}
 	namesFilter() {
 		const {name_filter} = this.state;
-		const names = data.filter((item => (item.first_name.indexOf(name_filter) != -1)));
-		return names;
+		const filtered = data.filter((item => (item.first_name.indexOf(name_filter) != -1)));
+		return filtered;
 	}
 	handleProfilePick(profile_id) {
 		this.setState({ profile_index: profile_id })
