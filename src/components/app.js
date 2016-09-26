@@ -19,16 +19,18 @@ export default class App extends Component {
 		})
 	}
 	namesFilter() {
-		const {name_filter} = this.state;
-		const names = data.filter((item => (item.first_name.indexOf(name_filter) != -1)));
-		return names;
+		let {name_filter} = this.state;
+		name_filter = name_filter.toLowerCase();
+
+		const filtered = data.filter(item => item.first_name.toLowerCase().match(name_filter));
+		return filtered;
 	}
 	handleProfilePick(profile_id) {
 		this.setState({ profile_index: profile_id })
 	}
 	render() {
 		const {name_filter, profile_index} = this.state;
-		const cards = data.filter(((item, index, array) => item.first_name.indexOf(name_filter) != -1));
+		const cards = this.namesFilter();
 		console.log("cards:", cards.length)
 		return (
 			<div className="app">
