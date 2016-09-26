@@ -28,6 +28,7 @@ body,html{
 }
 .app .filter {
 	display: flex;
+	margin-bottom: 20px;
 }
 .app .filter input {
     width: 67%;
@@ -44,6 +45,7 @@ body,html{
 	margin-right: 25px;
 }
 .profile .avatar_container {
+	height: 320px;
 	background-color: #4FB3DA;
 	width: 100%;
 	text-align: center; 
